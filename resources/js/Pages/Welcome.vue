@@ -2,7 +2,7 @@
 import Fancybox from "@/Components/Fancybox.vue";
 import Layout from "@/Layouts/Layout.vue";
 import { Head } from "@inertiajs/vue3";
-
+import dayjs from 'dayjs'
 defineProps({
   aboutMe: {
     type: Object,
@@ -79,6 +79,9 @@ export default {
       this.activePage = page;
       window.scrollTo(0, 0); // تمرير الصفحة إلى الأعلى
     },
+    formatDate(date) {
+      return dayjs(date).format('MMM YYYY'); // لطباعة الشهر المختصر والسنة فقط
+    }
   },
 };
 </script>
@@ -113,9 +116,7 @@ export default {
           </header>
 
           <section class="about-text">
-            <p v-if="aboutMe">
-              {{ aboutMe.description }}
-            </p>
+            <div v-if="aboutMe" v-html="aboutMe.description"></div>
           </section>
 
           <!-- services section -->
@@ -169,10 +170,10 @@ export default {
                 <h4 class="h4 timeline-item-title">
                   {{ education.company_name }}
                 </h4>
-                <span
-                  >{{ education.start_date }} —
-                  {{ education.end_date || "Present" }}</span
-                >
+                <span>
+                  {{ formatDate(education.start_date) }} —
+                  {{ education.end_date ? formatDate(education.end_date) : "Present" }}
+                </span>
                 <p class="timeline-text">
                   {{ education.description }}
                 </p>
@@ -193,7 +194,10 @@ export default {
                 <h4 class="h4 timeline-item-title">
                   {{ work.job_title }}
                 </h4>
-                <span>{{ work.start_date }} — {{ work.end_date || "Present" }}</span>
+                <span>
+                  {{ formatDate(work.start_date) }} —
+                  {{ work.end_date ? formatDate(work.end_date) : "Present" }}
+                </span>
                 <p class="timeline-text">
                   {{ work.description }}
                 </p>
@@ -218,10 +222,10 @@ export default {
                 <h4 class="h4 timeline-item-title">
                   {{ employment.job_title }}
                 </h4>
-                <span
-                  >{{ employment.start_date }} —
-                  {{ employment.end_date || "Present" }}</span
-                >
+                <span>
+                  {{ formatDate(employment.start_date) }} —
+                  {{ employment.end_date ? formatDate(employment.end_date) : "Present" }}
+                </span>
                 <p class="timeline-text">
                   {{ employment.description }}
                 </p>

@@ -61,13 +61,13 @@ const toggleSidebar = () => {
             <figure class="avatar-box">
                 <img
                     src="assets/images/my-avatar.png"
-                    alt="Richard hanrick"
+                    alt="Anas Talal"
                     width="80"
                 />
             </figure>
 
             <div class="info-content">
-                <h1 class="name" title="Richard hanrick">{{about.name}}</h1>
+                <h1 class="name" title="Anas Talal">{{about.name}}</h1>
                 <p class="title">{{about.job_title}}</p>
             </div>
 
