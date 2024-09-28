@@ -204,7 +204,9 @@ export default {
                   {{ formatDate(employment.start_date) }} —
                   {{ employment.end_date ? formatDate(employment.end_date) : "Present" }}
                 </span>
-                <div v-html="employment.description"></div>
+                <div class="">
+                  <div class="timeline-text [&>*]:list-decimal  " v-html="employment.description"></div>
+                 </div>
               </li>
             </ol>
           </section>
@@ -225,7 +227,9 @@ export default {
                   {{ formatDate(work.start_date) }} —
                   {{ work.end_date ? formatDate(work.end_date) : "Present" }}
                 </span>
-                <div v-html="work.description"></div>
+                <div class="">
+                  <div class="timeline-text [&>*]:list-decimal  " v-html="work.description"></div>
+                 </div>
               </li>
             </ol>
           </section>
