@@ -201,6 +201,9 @@ export default {
                   {{ employment.job_title }}
                 </h4>
                 <span>
+                  {{ employment.company_name }}
+                </span>
+                <span>
                   {{ formatDate(employment.start_date) }} —
                   {{ employment.end_date ? formatDate(employment.end_date) : "Present" }}
                 </span>
@@ -223,6 +226,9 @@ export default {
                 <h4 class="h4 timeline-item-title">
                   {{ work.job_title }}
                 </h4>
+                <span>
+                  {{ work.company_name }}
+                </span>
                 <span>
                   {{ formatDate(work.start_date) }} —
                   {{ work.end_date ? formatDate(work.end_date) : "Present" }}
