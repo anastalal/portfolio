@@ -255,7 +255,13 @@ select{
   position: relative;
   padding-bottom: 7px;
 }
-
+.timeline-text ul{
+  list-style: disc;
+}
+.timeline-text ul li {
+   display: list-item !important;
+   list-style: disc;
+   }
 .article-title::after {
   content: "";
   position: absolute;
@@ -1756,7 +1762,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * PORTFOLIO
    */
 
-  .project-list { grid-template-columns: repeat(3, 1fr); }
+  .project-list { grid-template-columns: repeat(2, 1fr); }
 
 
 

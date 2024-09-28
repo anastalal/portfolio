@@ -177,34 +177,13 @@ export default {
                   {{ formatDate(education.start_date) }} —
                   {{ education.end_date ? formatDate(education.end_date) : "Present" }}
                 </span>
-                <div v-html="education.description"></div>
+               <div class="">
+                <div class="timeline-text [&>*]:list-decimal  " v-html="education.description"></div>
+               </div>
               </li>
             </ol>
           </section>
 
-          <!-- Work Experience Section -->
-          <section class="timeline">
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-              <h3 class="h3">Work Experience</h3>
-            </div>
-            <ol class="timeline-list">
-              <li v-for="work in workExperiences" :key="work.id" class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  {{ work.job_title }}
-                </h4>
-                <span>
-                  {{ formatDate(work.start_date) }} —
-                  {{ work.end_date ? formatDate(work.end_date) : "Present" }}
-                </span>
-                <div v-html="work.description"></div>
-              </li>
-            </ol>
-          </section>
-
-          <!-- Employment History Section -->
           <section class="timeline">
             <div class="title-wrapper">
               <div class="icon-box">
@@ -229,6 +208,30 @@ export default {
               </li>
             </ol>
           </section>
+          <!-- Work Experience Section -->
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+              <h3 class="h3">Work Experience</h3>
+            </div>
+            <ol class="timeline-list">
+              <li v-for="work in workExperiences" :key="work.id" class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  {{ work.job_title }}
+                </h4>
+                <span>
+                  {{ formatDate(work.start_date) }} —
+                  {{ work.end_date ? formatDate(work.end_date) : "Present" }}
+                </span>
+                <div v-html="work.description"></div>
+              </li>
+            </ol>
+          </section>
+
+          <!-- Employment History Section -->
+        
 
           <!-- Skills Section -->
           <section class="skill">

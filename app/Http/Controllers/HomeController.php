@@ -21,9 +21,11 @@ class HomeController extends Controller
 
         // جلب جميع الخدمات من جدول services
         $services = Service::all();
-        $educationExperiences = WorkExperience::where('type', 'eduction')->get();
-        $workExperiences = WorkExperience::where('type', 'work')->get();
-        $employmentHistories = WorkExperience::where('type', 'employment')->get();
+        $educationExperiences = WorkExperience::where('type', 'eduction')
+        ->orderByDesc('created_at')
+        ->get();
+        $workExperiences = WorkExperience::where('type', 'work')->orderByDesc('created_at')->get() ;
+        $employmentHistories = WorkExperience::where('type', 'employment')->orderByDesc('created_at')->get();
 
         // جلب جميع المهارات
         $skills = Skill::all();
