@@ -168,8 +168,11 @@ export default {
                 class="timeline-item"
               >
                 <h4 class="h4 timeline-item-title">
-                  {{ education.company_name }}
+                  {{ education.job_title }}
                 </h4>
+                <span>
+                  {{ education.company_name }}
+                </span>
                 <span>
                   {{ formatDate(education.start_date) }} —
                   {{ education.end_date ? formatDate(education.end_date) : "Present" }}
