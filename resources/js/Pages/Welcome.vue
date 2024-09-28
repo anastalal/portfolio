@@ -177,9 +177,7 @@ export default {
                   {{ formatDate(education.start_date) }} —
                   {{ education.end_date ? formatDate(education.end_date) : "Present" }}
                 </span>
-                <p class="timeline-text">
-                  {{ education.description }}
-                </p>
+                <div v-html="education.description"></div>
               </li>
             </ol>
           </section>
@@ -201,9 +199,7 @@ export default {
                   {{ formatDate(work.start_date) }} —
                   {{ work.end_date ? formatDate(work.end_date) : "Present" }}
                 </span>
-                <p class="timeline-text">
-                  {{ work.description }}
-                </p>
+                <div v-html="work.description"></div>
               </li>
             </ol>
           </section>
@@ -229,9 +225,7 @@ export default {
                   {{ formatDate(employment.start_date) }} —
                   {{ employment.end_date ? formatDate(employment.end_date) : "Present" }}
                 </span>
-                <p class="timeline-text">
-                  {{ employment.description }}
-                </p>
+                <div v-html="employment.description"></div>
               </li>
             </ol>
           </section>
