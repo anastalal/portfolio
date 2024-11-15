@@ -16,6 +16,11 @@
         @routes
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
         @inertiaHead
+        @if(isset($page['props']['event']))
+        <meta property="og:title" content="{{ isset($page['props']['aboutMe']['seo_title']) ? $page['props']['aboutMe']['seo_title'] : '' }}" />
+        <meta property="og:description" content="{{ (isset($page['props']['aboutMe']['seo_description'])) ? $page['props']['aboutMe']['seo_description'] : '' }}"/>
+        <meta property="og:image" content="{{  (isset($page['props']['aboutMe']['open_graph_image'])) ? ($page['props']['aboutMe']['open_graph_image']) : '' }}"/>
+        @endif
     </head>
     <body class="font-sans antialiased">
         @inertia

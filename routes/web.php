@@ -19,3 +19,12 @@ Route::middleware('auth')->group(function () {
 });
 
 // require __DIR__.'/auth.php';
+class Service
+{
+    // ...
+}
+ 
+Route::get('/test', function (Service $service) {
+    die($service::class);
+});
+

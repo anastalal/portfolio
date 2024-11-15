@@ -333,6 +333,7 @@ export default {
                           :src="'storage/' + project.image"
                           :alt="project.name"
                           loading="lazy"
+                          class="w-full"
                         />
                       </a>
                     </Fancybox>
@@ -356,7 +357,7 @@ export default {
                     </a>
                   </div>
       
-                  <div id="project-techniques" class="mt-3 flex gap-2">
+                  <div id="project-techniques" class="mt-3 flex flex-wrap gap-2">
                     <span
                       v-for="technique in project.tech"
                       :key="technique.id"

@@ -42,9 +42,10 @@ class AboutMeResource extends Resource
                 Forms\Components\KeyValue::make('links')
                 ->columnSpanFull(),
                 Forms\Components\TextInput::make('seo_title'),
-                Forms\Components\TextInput::make('seo_description'),
+                Forms\Components\Textarea::make('seo_description')
+                ->columnSpanFull(),
                 Forms\Components\FileUpload::make('open_graph_image')
-                    ->image(),
+                   ,
             ]);
     }
 
