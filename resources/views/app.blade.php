@@ -19,7 +19,7 @@
         @if(isset($page['props']['aboutMe']))
         <meta property="og:title" content="{{ isset($page['props']['aboutMe']['seo_title']) ? $page['props']['aboutMe']['seo_title'] : '' }}" />
         <meta property="og:description" content="{{ (isset($page['props']['aboutMe']['seo_description'])) ? $page['props']['aboutMe']['seo_description'] : '' }}"/>
-        <meta property="og:image" content="{{  (isset($page['props']['aboutMe']['open_graph_image'])) ? ($page['props']['aboutMe']['open_graph_image']) : '' }}"/>
+        <meta property="og:image" content="{{  (isset($page['props']['aboutMe']['open_graph_image'])) ? config('app.url').'/storage/'.($page['props']['aboutMe']['open_graph_image']) : '' }}"/>
         @endif
     </head>
     <body class="font-sans antialiased">
